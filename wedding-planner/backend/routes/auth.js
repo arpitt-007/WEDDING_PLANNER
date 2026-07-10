@@ -8,7 +8,6 @@ const router = express.Router();
 const signToken = (userId) =>
   jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: '30d' });
 
-// @route   POST /api/auth/register
 router.post('/register', async (req, res) => {
   try {
     const { email, password, partner1Name, partner2Name, weddingDate, venue, totalBudget } =
