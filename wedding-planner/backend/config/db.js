@@ -1,12 +1,17 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
+  console.log("NODE_ENV:", process.env.NODE_ENV);
+  console.log("MONGO_URI exists:", !!process.env.MONGO_URI);
+
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI);
-    console.log(`MongoDB connected: ${conn.connection.host}`);
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+
+    console.log("Connected:", conn.connection.host);
   } catch (err) {
-    console.error(`MongoDB connection error: ${err.message}`);
-    process.exit(1);
+    console.error("FULL ERROR:");
+    console.error(err);
+    throw err;
   }
 };
 
