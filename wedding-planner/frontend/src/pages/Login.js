@@ -72,7 +72,7 @@ export default function Login() {
           {submitting ? 'Signing in\u2026' : 'Sign in'}
         </button>
 
-        <p style={{ fontSize: '0.85rem', marginTop: '1.2rem', color: 'var(--ink-soft)' , fontSize: '1.2rem' }}>
+        <p style={{ marginTop: '1.2rem', color: 'var(--ink-soft)' , fontSize: '1.2rem' }}>
           New here? <Link to="/register">Create an account</Link>
         </p>
       </form>
